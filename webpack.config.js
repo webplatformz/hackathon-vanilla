@@ -36,12 +36,28 @@ const comonConfig = {
     }
 };
 
-let config = merge(
-    comonConfig,
-    devServerConfig.devServer({
-        host: process.env.HOST,
-        port: 3000
-    })
-);
+let config;
+
+switch (process.env.npm_lifecycle_event) {
+    case 'build':
+    case 'stats':
+        config = merge(
+            comonConfig,
+            {
+                output: {
+                    publicPath: './'
+                }
+            }
+        );
+        break;
+    default:
+        config = merge(
+            comonConfig,
+            devServerConfig.devServer({
+                host: process.env.HOST,
+                port: 3000
+            })
+        );
+}
 
 module.exports = validate(config);
