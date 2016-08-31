@@ -6,7 +6,9 @@ const validate = require('webpack-validator');
 
 const comonConfig = {
 
-    entry: "./app/app.js",
+    entry: {
+        "app": "./app/app.js"
+    },
 
     output: {
         path: path.resolve(__dirname, "build"),
