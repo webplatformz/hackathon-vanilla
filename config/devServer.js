@@ -8,7 +8,7 @@ exports.devServer = function (options) {
         },
 
         devServer: {
-            historyApiFallback: true,
+            historyApiFallback: false,
             hot: true,
             inline: true,
             quiet: false,
@@ -25,4 +25,4 @@ exports.devServer = function (options) {
             })
         ]
     };
-}
+};

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const devServerConfig = require('./config/devServer');
+const validate = require('webpack-validator');
 
 const comonConfig = {
 
@@ -9,7 +10,6 @@ const comonConfig = {
 
     output: {
         path: path.resolve(__dirname, "build"),
-        publicPath: "/assets/",
         filename: "[name].bundle.js"
     },
 
@@ -42,4 +42,4 @@ let config = merge(
     })
 );
 
-module.exports = config;
+module.exports = validate(config);
