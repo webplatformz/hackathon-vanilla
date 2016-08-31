@@ -1,5 +1,5 @@
-import {getHotels} from './HotelService';
+import * as HotelTable from './HotelTable.component';
+import * as Hotel from './HotelTile.component';
 
-getHotels().then(hotels => {
-    document.getElementsByTagName('main')[0].innerHTML = hotels.map(hotel => `<div>${hotel.hotelName}</div>`).join('');
-});
+HotelTable.register();
+Hotel.register();
