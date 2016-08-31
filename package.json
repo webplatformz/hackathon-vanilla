@@ -1,0 +1,23 @@
+{
+  "name": "hackathon-vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webplatformz/hackathon-vanilla.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webplatformz/hackathon-vanilla/issues"
+  },
+  "homepage": "https://github.com/webplatformz/hackathon-vanilla#readme",
+  "devDependencies": {
+    "webpack": "1.13.2"
+  }
+}
