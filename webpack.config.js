@@ -1,6 +1,9 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const devServerConfig = require('./config/devServer');
 
-module.exports = {
+const comonConfig = {
 
     entry: "./app/app.js",
 
@@ -9,6 +12,12 @@ module.exports = {
         publicPath: "/assets/",
         filename: "[name].bundle.js"
     },
+
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
+    ],
 
     module: {
         loaders: [
@@ -24,3 +33,13 @@ module.exports = {
         ]
     }
 };
+
+let config = merge(
+    comonConfig,
+    devServerConfig.devServer({
+        host: process.env.HOST,
+        port: 3000
+    })
+);
+
+module.exports = config;
