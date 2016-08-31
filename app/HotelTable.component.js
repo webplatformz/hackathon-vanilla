@@ -6,7 +6,7 @@ class HotelTable extends HTMLElement {
     }
 
     render(hotels) {
-        this.innerHTML = hotels.map(hotel => `<hotel-tile hotelname="${hotel.hotelName}"></hotel-tile>`).join('');
+        this.innerHTML = hotels.map(hotel => `<hotel-tile hotelname="${hotel.hotelName}" id="${hotel.index}"></hotel-tile>`).join('');
     }
 }
 
